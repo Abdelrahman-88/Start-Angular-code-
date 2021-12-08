@@ -1,0 +1,43 @@
+section{
+    background-color: rgb(26, 188, 156);
+    color: white;
+}
+
+h2{
+    font-size: 3rem;
+    font-weight: 600;
+    color: white;
+}
+
+.star {
+    position: relative;
+    text-align: center;
+    color: white;
+    width: fit-content;
+}
+
+.star::after {
+    content: "";
+    position: absolute;
+    background-color: white;
+    width: 100px;
+    height: 4px;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 60px;
+}
+
+.star::before {
+    content: "";
+    position: absolute;
+    background-color: white;
+    width: 100px;
+    height: 4px;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 60px;
+}
+
+p{
+    font-size: 18px;
+}

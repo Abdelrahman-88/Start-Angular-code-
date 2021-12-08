@@ -1,0 +1,69 @@
+<section class="py-5">
+    <div (click)="closePopup($event)" class="popup d-none overflow-auto">
+        <div class="popupContainer w-75 bg-white p-5 position-relative">
+            <i (click)="closeSlide()" class="fas fa-times close"></i>
+            <h2 class="text-center">{{imgName}}</h2>
+            <div class="d-flex justify-content-center">
+                <div class="star"><i class="fas fa-star fs-2"></i></div>
+            </div>
+            <div class="text-center">
+                <img class="w-50 my-4" [src]="imgSrc" alt="Cabin">
+            </div>
+            <p class="text-center">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cumque facilis, corporis delectus aliquid quidem sunt! Nisi dolorum voluptatibus a blanditiis. Tempora dolorum eos iusto amet! Accusantium molestiae omnis eveniet temporibus!</p>
+            <div class="text-center"><button (click)="closeSlide()" class="btn"><i class="fas fa-times"></i> Close</button></div>
+        </div>
+    </div>
+    <header class="py-3">
+        <h2 class="text-center pt-5 pb-1">PORTFOLIO</h2>
+        <div class="d-flex justify-content-center">
+            <div class="star"><i class="fas fa-star fs-2"></i></div>
+        </div>
+    </header>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 px-3 py-4">
+                <div class="position-relative">
+                    <div (click)="displayPopup($event)" class="layer"><i (click)="getSrc($event)" class="fas fa-plus"></i></div>
+                    <img class="img-fluid" src="assets/img/cabin.png" alt="Cabin">
+                </div>
+
+            </div>
+            <div class="col-md-4 px-3 py-4">
+                <div (click)="displayPopup($event)" class="position-relative">
+                    <div class="layer"><i (click)="getSrc($event)" class="fas fa-plus"></i></div>
+                    <img class="img-fluid" src="assets/img/cake.png" alt="Cake">
+                </div>
+
+            </div>
+            <div class="col-md-4 px-3 py-4">
+                <div (click)="displayPopup($event)" class="position-relative">
+                    <div class="layer"><i (click)="getSrc($event)" class="fas fa-plus"></i></div>
+                    <img class=" img-fluid" src="assets/img/circus.png" alt="Circus">
+                </div>
+
+            </div>
+            <div class="col-md-4 px-3 py-4">
+                <div (click)="displayPopup($event)" class="position-relative">
+                    <div class="layer"><i (click)="getSrc($event)" class="fas fa-plus"></i></div>
+                    <img class="img-fluid" src="assets/img/game.png" alt="Game">
+                </div>
+
+            </div>
+            <div class="col-md-4 px-3 py-4">
+                <div (click)="displayPopup($event)" class="position-relative">
+                    <div class="layer"><i (click)="getSrc($event)" class="fas fa-plus"></i></div>
+                    <img class="img-fluid" src="assets/img/safe.png" alt="Safe">
+                </div>
+
+            </div>
+            <div (click)="displayPopup($event)" class="col-md-4 px-3 py-4">
+                <div class="position-relative">
+                    <div class="layer"><i (click)="getSrc($event)" class="fas fa-plus"></i></div>
+                    <img class="img-fluid" src="assets/img/submarine.png" alt="Submarine">
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</section>

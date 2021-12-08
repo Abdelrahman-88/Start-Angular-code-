@@ -1,0 +1,53 @@
+section {
+    background-color: #1abc9c;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+h1 {
+    font-size: 60px;
+}
+
+img {
+    width: 250px;
+}
+
+.star {
+    position: relative;
+    text-align: center;
+    width: fit-content;
+}
+
+.star::after {
+    content: "";
+    position: absolute;
+    background-color: white;
+    width: 100px;
+    height: 4px;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 60px;
+}
+
+.star::before {
+    content: "";
+    position: absolute;
+    background-color: white;
+    width: 100px;
+    height: 4px;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 60px;
+}
+
+@media screen and (max-width:762px) {
+    h1 {
+        font-size: 40px;
+    }
+    p {
+        font-size: 15px !important;
+    }
+}

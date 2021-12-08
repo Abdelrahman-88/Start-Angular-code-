@@ -1,0 +1,66 @@
+<section class="py-5">
+    <header class="py-3">
+        <h2 class="text-center pt-5 pb-1">CONTACT</h2>
+        <div class="d-flex justify-content-center">
+            <div class="star"><i class="fas fa-star fs-2"></i></div>
+        </div>
+    </header>
+    <div class="container">
+        <div class="w-75 mx-auto">
+            <form [formGroup]="contactForm" (ngSubmit)="submitContactForm(contactForm)">
+                <div class="my-3">
+                    <div class="form-floating mb-3">
+                        <input [ngClass]="{'is-valid': contactForm.get('name')?.errors==null}" type="text" formControlName="name" class="form-control text-info bg-transparent border-info" id="name" placeholder="Name">
+                        <label class="text-info" for="name">Name</label>
+                    </div>
+                    <div *ngIf="contactForm.get('name')?.errors!=null && contactForm.get('name')?.touched" class="alert alert-danger mt-2 fw-bolder bg-transparent border-danger">
+                        <p class="my-2" *ngIf="contactForm.get('name')?.errors?.required">Name is required</p>
+                        <p class="my-2" *ngIf="contactForm.get('name')?.errors?.minlength">Name minlength is 3</p>
+                        <p class="my-2" *ngIf="contactForm.get('name')?.errors?.maxlength">Name maxlength is 50</p>
+                        <p class="my-2" *ngIf="contactForm.get('name')?.errors?.pattern">Letters only available</p>
+                    </div>
+                </div>
+
+                <div class="my-3">
+                    <div class="form-floating mb-3">
+                        <input [ngClass]="{'is-valid': contactForm.get('email')?.errors==null}" type="email" formControlName="email" class="form-control text-info bg-transparent border-info" id="email" placeholder="Email">
+                        <label class="text-info" for="email">Email</label>
+                    </div>
+                    <div *ngIf="contactForm.get('email')?.errors!=null && contactForm.get('email')?.touched" class="alert alert-danger mt-2 fw-bolder bg-transparent border-danger">
+                        <p class="my-2" *ngIf="contactForm.get('email')?.errors?.required">Email is required</p>
+                        <p class="my-2" *ngIf="contactForm.get('email')?.errors?.email">Email should be such as example@domain.com</p>
+                    </div>
+                </div>
+                <div class="my-3">
+                    <div class="form-floating mb-3">
+                        <input [ngClass]="{'is-valid': contactForm.get('phone')?.errors==null}" type="tel" formControlName="phone" class="form-control text-info bg-transparent border-info" id="phone" placeholder="Phone">
+                        <label class="text-info" for="phone">Phone</label>
+                    </div>
+                    <div *ngIf="contactForm.get('phone')?.errors!=null && contactForm.get('phone')?.touched" class="alert alert-danger mt-2 fw-bolder bg-transparent border-danger">
+                        <p class="my-2" *ngIf="contactForm.get('phone')?.errors?.required">Phone is required</p>
+                        <p class="my-2" *ngIf="contactForm.get('phone')?.errors?.pattern">Phone number should be such as 010********</p>
+                    </div>
+                </div>
+                <div class="my-3">
+                    <div class="form-floating mb-3">
+                        <textarea [ngClass]="{'is-valid': contactForm.get('comment')?.errors==null}" formControlName="comment" class="form-control text-info bg-transparent border-info" placeholder="Comment" id="floatingComment" style="height: 100px"></textarea>
+                        <label class="text-info" for="floatingComment">Comment</label>
+                    </div>
+                    <div *ngIf="contactForm.get('comment')?.errors!=null && contactForm.get('comment')?.touched" class="alert alert-danger mt-2 fw-bolder bg-transparent border-danger">
+                        <p class="my-2" *ngIf="contactForm.get('comment')?.errors?.required">Comment is required</p>
+                        <p class="my-2" *ngIf="contactForm.get('comment')?.errors?.minlength">Comment minlength is 3</p>
+                        <p class="my-2" *ngIf="contactForm.get('comment')?.errors?.maxlength">Comment maxlength is 200</p>
+                        <p class="my-2" *ngIf="contactForm.get('comment')?.errors?.pattern">Letters only available</p>
+                    </div>
+                </div>
+
+                <p id="successAlert" *ngIf="valid" class="alert alert-success text-center">Success</p>
+                <div>
+                    <button [disabled]="contactForm.invalid" type="submit" class="btn btn-outline-info mt-2">Send</button>
+                </div>
+            </form>
+
+        </div>
+
+    </div>
+</section>
